@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyecto_datos;
 
 /**
  *
- * @author Jose Ignacio
+ * @author Dell
  */
 public class Cola {
     //se crean los atributos
@@ -18,7 +17,7 @@ public class Cola {
         this.end=null;
     }
     // se inicia el metodo insert
-    public void insert(preparacion dato){
+    public void insert(Preparacion dato){
         NodoCola nuevo_nodo = new NodoCola(dato);
         if(begin==null){
             begin=nuevo_nodo;
@@ -28,9 +27,9 @@ public class Cola {
             end=nuevo_nodo;
         }
     }
-    // se inicia los metodos de extraccion llamdos extract
-    public preparacion extract(){
-        preparacion dato = this.begin.getPrepa();
+    // se inicia los metodos de extraccion llamdos extract y extract2
+    public Preparacion extract(){
+        Preparacion dato = this.begin.getPrepa();
         begin = begin.getNext();
         return dato;
     }
@@ -90,5 +89,5 @@ public class Cola {
         }
     return t;
     }
-
+    
 }

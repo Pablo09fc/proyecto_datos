@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyecto_datos;
 
 /**
  *
- * @author Jose Ignacio
+ * @author Dell
  */
-public class listaBanda {
+public class ListaBanda {
     //se nombran los atributos
     private NodoLista begin;
     private NodoLista end;
@@ -136,6 +135,16 @@ public void insert(Ingredientes I){
             }
         }
         return p;
+    }
+    public Ingredientes extraer(){
+        Ingredientes dato = begin.getValue();
+        begin = begin.getNext();
+        return dato;
+    }
+    public Ingredientes extraer2(){
+        Ingredientes dato = begin.getValue();
+        //inicio = inicio.getNext();
+        return dato;
     }
     public void setUltimo(NodoLista ultimo) {
         this.end = end;

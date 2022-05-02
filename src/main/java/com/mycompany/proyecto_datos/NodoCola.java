@@ -2,26 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyecto_datos;
 
 /**
  *
- * @author Jose Ignacio
+ * @author Dell
  */
 public class NodoCola {
     //Se nombran los atributos
-    private preparacion prepa;
+    private Preparacion prepa;
     private NodoCola next;
     // se crea un constructor
-    public NodoCola(preparacion orden){
+    public NodoCola(Preparacion orden){
         this.prepa=prepa;
     }
     // se crean los get y los set
-    public preparacion getPrepa() {
+    public Preparacion getPrepa() {
         return prepa;
     }
 
-    public void setPrepa(preparacion prepa) {
+    public void setPrepa(Preparacion prepa) {
         this.prepa = prepa;
     }
 
@@ -37,6 +36,4 @@ public class NodoCola {
     public String toString() {
         return "NodoCola{" + "prepa=" + prepa + ", next=" + next + '}';
     }
-    
 }
-

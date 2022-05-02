@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyecto_datos;
 
 /**
  *
- * @author Jose Ignacio
+ * @author Dell
  */
-public class preparacion {
+public class Preparacion {
     // se nombran los atributos
     private Nodo cabeza;
     private int puntos;
@@ -69,7 +68,7 @@ public class preparacion {
         contador();
         return found;
     }
-    // se da inicio al metodo modifies// este metodo busca el metodo existe y modifica el ingediente
+    // se da inicio al metodo modifies// este metodo busca el metodo existe y modifica el ingrediente
     public void modifies(Ingredientes ingre, int nuevoP) {
         if (exists(ingre.getIngrediente())) {
             Nodo aux = cabeza;
@@ -143,4 +142,4 @@ public class preparacion {
         }
         this.puntos=sum;
     }
-} 
+}

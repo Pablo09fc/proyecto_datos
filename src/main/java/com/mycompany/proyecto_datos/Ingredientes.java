@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyecto_datos;
 
 /**
  *
- * @author Jose Ignacio
+ * @author Dell
  */
 public class Ingredientes {
     //Se nombran las variables
@@ -38,5 +37,4 @@ public class Ingredientes {
     public String toString() {
         return "Ingredientes{" + "ingrediente=" + ingrediente + ", puntos=" + puntos + '}';
     }
-    
 }
