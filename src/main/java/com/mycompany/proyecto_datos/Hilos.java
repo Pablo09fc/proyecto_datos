@@ -1,3 +1,5 @@
+package com.mycompany.proyecto_datos;
+
 import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;

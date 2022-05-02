@@ -1,3 +1,5 @@
+package com.mycompany.proyecto_datos;
+
 
 import javax.swing.JOptionPane;
 

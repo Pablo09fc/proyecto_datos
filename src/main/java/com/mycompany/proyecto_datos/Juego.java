@@ -1,3 +1,5 @@
+package com.mycompany.proyecto_datos;
+
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -6,15 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author Dell
- */
 public final class Juego extends javax.swing.JFrame {
     ArrayList<JTextArea> ordenes;
     ArrayList<JButton> botones;
