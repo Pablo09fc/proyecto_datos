@@ -48,9 +48,9 @@ ArrayList<JTextArea> ordenes;
         c.insert(p3);
         
         ordenes = new ArrayList<>();
-        ordenes.add(jTextArea1);
-        ordenes.add(jTextArea2);
         ordenes.add(jTextArea3);
+        ordenes.add(jTextArea2);
+        ordenes.add(jTextArea1);
     }
 
     /**
