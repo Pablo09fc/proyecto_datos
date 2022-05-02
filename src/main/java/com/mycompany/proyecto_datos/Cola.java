@@ -28,14 +28,10 @@ public class Cola {
             end=nuevo_nodo;
         }
     }
-    // se inicia los metodos de extraccion llamdos extract y extract2
+    // se inicia los metodos de extraccion llamdos extract
     public preparacion extract(){
         preparacion dato = this.begin.getPrepa();
         begin = begin.getNext();
-        return dato;
-    }
-    public preparacion extract2(){
-        preparacion dato = this.begin.getPrepa();
         return dato;
     }
     // se inicia el metodo empty
