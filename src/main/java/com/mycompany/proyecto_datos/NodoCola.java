@@ -14,9 +14,12 @@ public class NodoCola {
     private Preparacion prepa;
     private NodoCola next;
     // se crea un constructor
-    public NodoCola(Preparacion orden){
-        this.prepa=prepa;
+    public void NodoCola(Preparacion orden){
+        this.prepa=new Preparacion();
+        this.next=null;
     }
+
+    
     // se crean los get y los set
     public Preparacion getPrepa() {
         return prepa;

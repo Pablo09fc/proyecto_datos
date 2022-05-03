@@ -20,14 +20,15 @@ public class Cola {
     }
     // se inicia el metodo insert
     public void insert(Preparacion dato){
-        NodoCola nuevo_nodo = new NodoCola(dato);
-        if(begin==null){
-            begin=nuevo_nodo;
-            end=nuevo_nodo;
-        }else{
-            end.setNext(nuevo_nodo);
-            end=nuevo_nodo;
+        NodoCola n= new NodoCola();
+        n.setPrepa(dato);
+        n.setNext(null);
+        if(this.begin==null && end==null){
+            this.begin=n;
+            this.end=n;
         }
+        end.setNext(n);
+        end = end.getNext();
     }
     // se inicia los metodos de extraccion llamdos extract y extract2
     public Preparacion extract(){

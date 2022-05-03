@@ -10,7 +10,6 @@ import javax.swing.JTextArea;
 
 
 public final class Juego extends javax.swing.JFrame {
-    ArrayList<JTextArea> ordenes;
     ArrayList<JButton> botones;
     
     
@@ -28,54 +27,57 @@ public final class Juego extends javax.swing.JFrame {
         
         
         /*-------------------------------------*/
-        this.banda = new ListaBanda();
-        banda.insert(in1); 
-        banda.insert(in2); 
-        banda.insert(in3); 
-        banda.insert(in4); 
-        
-        Cola c= new Cola();
-        /*-------------------------------------*/
+        this.cola  = new Cola();
         Preparacion p1 = new Preparacion();
         p1.insert(in1);
         p1.insert(in2);
         p1.insert(in3);
         p1.insert(in4);
-        c.insert(p1);
+        cola.insert(p1);
         /*-------------------------------------*/
         Preparacion p2= new Preparacion();
-        p1.insert(in1);
-        p1.insert(in2);
-        p1.insert(in4);
-        c.insert(p2);
+        p2.insert(in1);
+        p2.insert(in2);
+        p2.insert(in4);
+        cola.insert(p2);
         /*-------------------------------------*/
         Preparacion p3=new Preparacion ();
-        p1.insert(in1);
-        p1.insert(in2);
-        c.insert(p3);
+        p3.insert(in1);
+        p3.insert(in2);
+        cola.insert(p3);
         /*-------------------------------------*/     
-        banda = new ListaBanda();
-        banda.insert(in1); //queso
-        banda.insert(in2); //lechuga
-        banda.insert(in3); //carne99
-        banda.insert(in4); //carne
-        initComponents();
+        this.banda = new ListaBanda();
+        banda.insert(in1); //pan
+        banda.insert(in2); //carne
+        banda.insert(in3); //lechuga
+        banda.insert(in4); //queso
+        
+       
         /*-------------------------------------*/
-        ordenes = new ArrayList<>();
-        ordenes.add(Pantalla1);
-        ordenes.add(Pantalla2);
-        ordenes.add(Pantalla3);
-        /*-------------------------------------*/
-        prepa = new Preparacion();
-        /*-------------------------------------*/
+        this.prepa = new Preparacion();
         botones = new ArrayList<>();
         botones.add(btn_pan);
         botones.add(btn_carne);
         botones.add(btn_queso);
         botones.add(btn_lechuga);
-        /*-----------------ACTUALIZACIONES--------------------*/
-        update();
         
+        Pantalla1.setText(""+p1);
+        Pantalla2.setText(""+p2);
+        Pantalla3.setText(""+p3);
+        
+        actualizarBotones();
+        actualizarOrdenActual();
+    }
+    
+    public void actualizarBotones(){
+        int cont=0;
+        for (JButton button : botones){
+            button.setText(this.banda.InPos(cont));
+            cont++;
+        }
+    }
+    private void actualizarOrdenActual(){
+        Pantalla1.setText(prepa.toString());
     }
        
     /**
@@ -262,25 +264,24 @@ public final class Juego extends javax.swing.JFrame {
 
     private void btn_panActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_panActionPerformed
         
-        prepa.insert(banda.extract(btn_pan.getText()));
+        this.prepa.insert(banda.extract(btn_pan.getText()));
         update();
     }//GEN-LAST:event_btn_panActionPerformed
 
     private void btn_carneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carneActionPerformed
-        
-        prepa.insert(banda.extract(btn_carne.getText()));
+        this.prepa.insert(banda.extract(btn_carne.getText()));
         update();
     }//GEN-LAST:event_btn_carneActionPerformed
 
     private void btn_quesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quesoActionPerformed
         
-        prepa.insert(banda.extract(btn_queso.getText()));
+        this.prepa.insert(banda.extract(btn_queso.getText()));
         update();
     }//GEN-LAST:event_btn_quesoActionPerformed
 
     private void btn_lechugaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lechugaActionPerformed
         
-        prepa.insert(banda.extract(btn_lechuga.getText()));
+        this.prepa.insert(banda.extract(btn_lechuga.getText()));
         update();
     }//GEN-LAST:event_btn_lechugaActionPerformed
 
@@ -295,7 +296,7 @@ public final class Juego extends javax.swing.JFrame {
 
     private void btn_listoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listoActionPerformed
         // TODO add your handling code here:
-        if(banda.extraer2().getPuntos() == prepa.getPuntos()){
+        if(cola.extract2() == prepa.getPuntos()){
             puntos.setText(prepa.getPuntos()+" puntos");
             puntoss +=prepa.getPuntos();
             prepa.delete();
@@ -364,6 +365,7 @@ public final class Juego extends javax.swing.JFrame {
     }
     private static ListaBanda banda;
     private static Preparacion prepa;
+    private static Cola cola;
     int puntoss;
     
     
